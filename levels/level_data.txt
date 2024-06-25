@@ -1,0 +1,194 @@
+# LEVEL 0 (MAIN MENU)
+big_pixel_text = BigPixelText(300, 200, 'Cursor adventures', color_black)
+#
+# play_button = PlayButton(600, 425, 325, 125)
+# exit_button = ExitButton(600, 600, 325, 125)
+#
+# play_text = PixelText(685,470, 'Играть')
+# exit_text = PixelText(685,645, 'Выйти')
+#
+# text_list = [big_pixel_text, play_text, exit_text]
+# objects = [play_button,exit_button]
+# level_start_pos = (800, 450)
+# level = [level_start_pos, objects, text_list]
+############################################
+
+## LEVEL 1
+tutorial_text1 = TutorialText(100,500, 'Душа курсора выходит из тела,')
+tutorial_text1l2 = TutorialText(100,230, 'если он ударяется об препятствия.')
+tutorial_text1l3 = TutorialText(80,400, 'Душа возвращается в потерянное тело, касаясь его')
+tutorial_text2 = TutorialText(1000,280, 'Это финиш, его нужно достигнуть вместе с телом')
+object1 = Object(700, 0, 200, 800)
+
+level_end = LevelEndTrigger(1300, 350, 200,200)
+texts = [tutorial_text1, tutorial_text1l2, tutorial_text1l3, tutorial_text2]
+objects = [object1, level_end]
+level_start_pos = (200, 200)
+level = [level_start_pos, objects,texts]
+#################################
+# LEVEL 2
+# tutorial_text1 = TutorialText(20,300, 'С голубыми объектами может взаимодействовать')
+# tutorial_text2 = TutorialText(20,330, 'только душа, а с остальными только тело.')
+# object1 = Object(600, 0, 50, 800)
+# object2 = Object(900, 100, 50, 800)
+# button_subject1 = ButtonSubject(600,800, 50,100)
+# button_subject2 = ButtonSubject(900, 0, 50,100)
+# button1 = ButtonObject(100, 600, 100, 100, color_green, subject=button_subject1)
+# button2 = ButtonObject(1400, 150, 100, 100, color_light_blue, subject=button_subject2, ghost_button=True)
+#
+# level_end = LevelEndTrigger(1300, 350, 200,200)
+# texts = [tutorial_text1, tutorial_text2]
+# objects = [object1, button_subject1, button1, object2, button_subject2,button2, level_end]
+# level_start_pos = (200, 200)
+# level = [level_start_pos, objects, texts]
+################################
+# object1 = Object(600, 0, 50, 800)
+# object2 = Object(900, 100, 50, 800)
+# button_subject1 = ButtonSubject(600,800, 50,100)
+# button_subject2 = ButtonSubject(900, 0, 50,100)
+# button1 = ButtonObject(100, 600, 100, 100, subject=button_subject1)
+# button2 = ButtonObject(1400, 150, 100, 100, subject=button_subject2, ghost_button=True)
+
+# LEVEL 3
+# tutorial_text1 = TutorialText(800, 860, 'Бездна пожирает и тело, и душу, не стоит ее касаться')
+# void1 = VoidObject(0, 300, 775, 100)
+# void2 = VoidObject(825, 300, 775, 100)
+# void3 = VoidObject(100, 500, 1500, 100)
+# void4 = VoidObject(0, 700, 1500, 100)
+# level_end = LevelEndTrigger(60, 60, 200, 200)
+#
+# texts = [tutorial_text1]
+# objects = [void1, void2, void3, void4, level_end]
+# level_start_pos = (40, 850)
+# level = [level_start_pos, objects, texts]
+######
+
+### LEVEL4
+# object1 = Object(0, 200, 300, 50)
+# object2 = Object(1300, 0, 50, 300)
+# object3 = Object(1300, 500, 300, 50)
+#
+# button_subject1 = ButtonSubject(1350, 250, 250, 50)
+# button_subject2 = ButtonSubject(250, 0, 50, 200)
+# button_subject3 = ButtonSubject(1300, 300, 50, 200, solid=False)
+# button1 = ButtonObject(50, 50, 100, 100, subject=button_subject1)
+# button2 = ButtonObject(1400, 700, 100, 100, subject=(button_subject2, button_subject3))
+# level_end = LevelEndTrigger(1400, 50, 150, 150)
+#
+# texts = []
+# objects = [object1, object2, object3, button1, button2, button_subject1, button_subject2, button_subject3, level_end]
+# level_start_pos = (40, 850)
+# level = [level_start_pos, objects, texts]
+#######
+#### LEVEL 5
+text1 = TutorialText(100,400,'Красные стены губят тело, а синие душу')
+
+void1 = VoidObject(250, 0, 100, 350)
+void2 = VoidObject(700, 0, 100, 700)
+
+body_kill1 = BodyKillerObject(0, 280, 250, 70)
+body_kill2 = BodyKillerObject(350, 200, 350, 70)
+
+ghost_kill1 = GhostKillerObject(350, 280, 350, 70, active=False)
+ghost_kill2 = GhostKillerObject(700, 700, 100, 200)
+
+object1 = Object(10, 200, 50, 50)
+object2 = Object(600, 40, 50, 50)
+
+button1 = ButtonObject(20, 20, 100, 100, subject=(ghost_kill1, ghost_kill2))
+button2 = ButtonObject(450, 20, 100, 100, subject=(body_kill1, body_kill2), ghost_button=True)
+
+level_end = LevelEndTrigger(1400, 350, 150, 150)
+
+texts = [text1]
+objects = [object1, object2, void1, void2, body_kill1, body_kill2, ghost_kill1, ghost_kill2, button1, button2, level_end]
+level_start_pos = (20, 20)
+level = [level_start_pos, objects, texts]
+########################################
+### LEVEL 6
+void1 = VoidObject(0, 800, 1600, 100)
+void2 = VoidObject(0, 650, 500, 80)
+void3 = VoidObject(500, 350, 100, 380)
+void4 = VoidObject(650, 760, 300, 40)
+void5 = VoidObject(600, 350, 450, 80)
+void6 = VoidObject(1000, 350, 100, 380)
+void7 = VoidObject(1100, 650, 200, 80)
+void8 = VoidObject(1200, 0, 100, 650)
+void9 = VoidObject(1500, 0, 100, 900)
+void10 = VoidObject(1300, 250, 200, 80, active=False)
+
+trigger1 = TriggerObject(650,490,300,275, color_yellow, activates_once=True, subject=void10)
+trigger2 = TriggerObject(1300,350,150,150, color_yellow, activates_once=True, subject=void10)
+trigger3 = TriggerObject(1350,550,150,150, color_yellow, activates_once=True, subject=void10)
+
+
+level_end = LevelEndTrigger(1325, 40, 150, 150)
+
+texts = []
+objects = [void1, void2, void3, void4, void5,void6,void7,void8,void9,void10, trigger1,trigger2,trigger3, level_end]
+level_start_pos = (20, 760)
+level = [level_start_pos, objects, texts]
+############
+###LEVEL 7
+object1 = Object(1550, 10, 50, 50)
+object2 = Object(1450, 450, 50, 50)
+
+
+void1 = VoidObject(450, 0, 100, 200)
+void2 = VoidObject(1050, 0, 100, 200)
+void3 = VoidObject(450, 100, 700, 100)
+void4 = VoidObject(450, 700, 100, 300)
+void5 = VoidObject(1050, 700, 100, 300)
+void6 = VoidObject(450, 700, 700, 100)
+void7 = VoidObject(1150, 700, 1000, 60)
+void8 = VoidObject(1500, 0, 10, 100)
+void9 = VoidObject(1500, 90, 100, 10)
+
+body_kill1 = BodyKillerObject(0, 100, 450, 100)
+body_kill2 = BodyKillerObject(1070, 200, 80, 500, active=False)
+
+ghost_kill1 = GhostKillerObject(1150, 100, 450, 100, active=False)
+
+trigger1 = TriggerObject(650, 200, 300, 500, color_yellow, activates_once=False, subject=(body_kill1, ghost_kill1))
+
+button1 = ButtonObject(150, 20, 75, 75, subject=void8)
+button2 = ButtonObject(1350, 20, 75, 75, ghost_button=True, subject=(body_kill2, void7, ghost_kill1))
+
+level_end = LevelEndTrigger(1325, 790, 100, 100)
+
+texts = []
+objects = [object1, object2, void1, void2, void3, void4, void5, void6, void7, void8, void9, trigger1, body_kill1, body_kill2,
+           ghost_kill1, button1, button2, level_end]
+level_start_pos = (20, 760)
+level = [level_start_pos, objects, texts]
+################
+### LEVEL 8
+void1 = VoidObject(1000,250,500,100)
+void2 = VoidObject(1000,550,500,100)
+void3 = VoidObject(1000,350,100,200)
+void4 = VoidObject(1400,350,100,200)
+
+timed_text1 = TimedText(100, 100, 'Я застрял...', color_cyan, 330)
+timed_text2 = TimedText(230, 100, 'Бездна загнала меня в ловушку', color_cyan, 480)
+timed_text3 = TimedText(100,125,'Это конец?', color_cyan,600)
+timed_text4 = TimedText(300,400,'Нет, я чувствую связь с другим миром, другим измерением', color_cyan,1200)
+timed_text5 = TimedText(300,425,'Мне нужно лишь понять как попасть туда, и обойти бездну', color_cyan,1420)
+timed_text6 = TimedText(100,600,'Нужно мыслить нестандартно, посмотреть на проблему абстрактно...', color_cyan,2600)
+timed_text7 = TimedText(100,625,'Что же находится за пределами этой чертовой коробки?', color_cyan, 3200)
+
+level_end = LevelEndFadeOutTrigger(100, 350, 150,150)
+texts = [timed_text1, timed_text2,timed_text3, timed_text4, timed_text5, timed_text6, timed_text7]
+objects = [void1, void2, void3, void4, level_end]
+level_start_pos = (1200, 450)
+level = [level_start_pos, objects, texts]
+##############
+### LEVEL 9 (END SCREEN)
+text1 = PixelText(550,300,'Спасибо за игру!')
+text2 = TutorialText(1200,800,'Автор: Маматкулов Рустам')
+exit_button = ExitButton(600, 600, 325, 125)
+exit_text = PixelText(685,645, 'Выйти')
+texts = [text1, text2, exit_text]
+objects = [exit_button]
+level_start_pos = (800, 450)
+level = [level_start_pos, objects, texts]
+#############################################
